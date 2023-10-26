@@ -20,9 +20,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pytest
-        working-directory: Oblig2Testing  # Erstatt 'path/to/your/project' med den faktiske stien til din prosjektmappen
+        working-directory: ${{ github.workspace }}
 
       - name: Run tests
         run: |
           pytest tests/test_isLeapYear.py
-        working-directory: Oblig2Testing/tests  # Erstatt 'path/to/your/project' med den faktiske stien til testmappen
+        working-directory: ${{ github.workspace }}
