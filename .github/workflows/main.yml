@@ -1,4 +1,4 @@
-name: CI
+name: Run Tests
 
 on:
   push:
@@ -9,9 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      # ... resten av arbeidsflytkonfigurasjonen din ...
-
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Python
@@ -21,7 +19,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install pytest
+        working-directory: ${{ github.workspace }}
 
       - name: Run tests
-        run: pytest tests/test_isLeapYear.py
+        run: |
+          pytest tests/test_isLeapYear.py
+        working-directory: ${{ github.workspace }}
