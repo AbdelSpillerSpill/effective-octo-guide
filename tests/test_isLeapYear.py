@@ -1,4 +1,5 @@
-import pytest
+import sys
+sys.path.insert(0, './')
 from isLeapYear import isLeapYear
 
 def test_leap_years():
