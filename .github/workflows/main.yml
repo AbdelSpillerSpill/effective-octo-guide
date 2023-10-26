@@ -1,15 +1,8 @@
-name: Run Tests
-
-on:
-  push:
-    branches:
-      - main
-
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Check out code
         uses: actions/checkout@v2
 
       - name: Set up Python
@@ -19,10 +12,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pytest
-        working-directory: ${{ github.workspace }}
+          pip install -r requirements.txt
 
       - name: Run tests
-        run: |
-          pytest tests/test_isLeapYear.py
-        working-directory: ${{ github.workspace }}
+        run: pytest tests/test_isLeapYear.py
