@@ -1,8 +1,7 @@
-import sys
-sys.path.insert(0, './')
+import pytest
 from isLeapYear import isLeapYear
 
-def test_leap_years():
+def test_isLeapYear():
     assert isLeapYear(2000) == True
     assert isLeapYear(2004) == True
     assert isLeapYear(2012) == True
