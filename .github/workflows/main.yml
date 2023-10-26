@@ -1,7 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # ... resten av arbeidsflytkonfigurasjonen din ...
+
       - name: Check out code
         uses: actions/checkout@v2
 
