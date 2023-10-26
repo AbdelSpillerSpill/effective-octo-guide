@@ -1,5 +1,5 @@
 import pytest
-from isLeapYear import isLeapYear
+from ..isLeapYear import isLeapYear
 
 def test_isLeapYear():
     assert isLeapYear(2000) == True
