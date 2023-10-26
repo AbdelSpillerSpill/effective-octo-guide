@@ -24,5 +24,5 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest test_isLeapYear.py
-        working-directory: ${{ github.workspace }}/tests
+          pytest tests/test_isLeapYear.py
+        working-directory: ${{ github.workspace }}
